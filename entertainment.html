@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>娱乐 POONG! - 蜂鸟互动</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 统一的顶部导航栏 (新版结构) -->
+    <header class="header">
+        <!-- 左侧 Logo -->
+        <div class="logo">
+            <!-- 这里的 src 填您真实的 logo 路径 -->
+            <img class="logo-img" src="images/hummingbird-logo1.png" alt="Logo">
+            <span data-i18n="nav.logo">蜂鸟互动</span>
+        </div>
+
+        <!-- 中间 导航链接 -->
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html" class="active" data-i18n="nav.home">首页</a>
+            <a href="ai.html" data-i18n="nav.ai">AI业务</a>
+            <a href="digital.html" data-i18n="nav.digital">数字孪生</a>
+            <a href="tourism.html" data-i18n="nav.tourism">文旅</a>
+            <a href="entertainment.html" data-i18n="nav.entertainment">娱乐</a>
+            <a href="about.html" data-i18n="nav.about">关于我们</a>
+            <a href="contact.html" data-i18n="nav.contact">联系我们</a>
+        </nav>
+
+        <!-- 右侧 语言与手机菜单 -->
+        <div class="header-right">
+            <!-- 语言切换 -->
+            <div class="lang-switcher" id="lang-switcher">
+                <div class="globe-icon" id="lang-btn">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                </div>
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <!-- 这里调用 JS 函数切换 -->
+                    <div class="lang-option" onclick="changeLanguage('zh')">中文</div>
+                    <div class="lang-option" onclick="changeLanguage('en')">English</div>
+                </div>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <div class="menu-toggle" id="mobile-menu-btn">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主视觉 (全宽大图占位) -->
+    <section class="hero-ent-new img-placeholder">
+        <!-- 这里的图是顶部带有一群怪兽的超大通栏图 -->
+        <img src="images/en-hero.webp" alt="POONG Hero">
+    </section>
+
+    <!-- 居中简介 -->
+    <section class="ent-intro">
+        <p data-i18n="entertainment_page.intro_p1">当MR科技碰撞潮玩基因，当运动活力融合社交乐趣</p>
+        <p data-i18n="entertainment_page.intro_p2">POONG!以“MR+线下+IP”为核心，打造集沉浸式对战、潮流社交、轻量运动于一体的新型娱乐生态</p>
+        <p data-i18n="entertainment_page.intro_p3">让线下娱乐突破想象边界，为用户带来“动起来的快乐”，为商业伙伴开辟新赛道。</p>
+    </section>
+
+    <!-- 极简上手 (文字居中悬浮在大图上) -->
+    <section class="ent-feature-simple-new">
+        <div class="ent-bg-img img-placeholder">
+            <!-- 这里的图是背景带小孩玩游戏的大图 -->
+            <img src="images/en-intro.webp" alt="极简上手背景">
+        </div>
+        <div class="ent-feature-content">
+            <h2 data-i18n="entertainment_page.easy_title">极简上手<br>全民畅玩</h2>
+            <p data-i18n="entertainment_page.easy_desc">无需复杂穿戴，仅需MR头显即可开启对战!挥手发射能量气泡<br>身体移动闪避攻击，只需讲解快速上手，从亲子家庭到年轻潮玩<br>群体，全年龄段都能即刻沉浸。</p>
+        </div>
+    </section>
+
+    <!-- 沉浸对战 (文字 + 一张全宽对战大图) -->
+    <section class="ent-battle-new">
+        <div class="ent-title-center">
+            <h2 data-i18n="entertainment_page.battle_title">沉浸对战</h2>
+            <h3 data-i18n="entertainment_page.battle_sub">挥手攻击，移动闪避，随机生成强化道具与防御掩体</h3>
+            <p data-i18n="entertainment_page.battle_desc">1v1、2v2、3v3<br>短时高频运动，2分钟一局，健身娱乐两不误</p>
+        </div>
+        <!-- 原本的三个方块变成了一整张大图 -->
+        <div class="battle-big-img img-placeholder">
+            <img src="images/en1.webp" alt="对战画面截图">
+        </div>
+    </section>
+
+    <!-- 社区与生态 (两列布局不变) -->
+    <section class="ent-community">
+        <div class="comm-grid">
+            <div class="comm-left">
+                <h3 data-i18n="entertainment_page.rank_title">Poong友社区</h3>
+                <ul class="rank-list">
+                    <li><span class="rank-name" data-i18n="entertainment_page.rank_col1">1 夏冬吾归</span><span class="rank-score" data-i18n="entertainment_page.rank_sc1">9850 pts</span></li>
+                    <li><span class="rank-name" data-i18n="entertainment_page.rank_col2">2 夏冬吾归</span><span class="rank-score" data-i18n="entertainment_page.rank_sc2">9850 pts</span></li>
+                    <li><span class="rank-name" data-i18n="entertainment_page.rank_col3">3 夏冬吾归</span><span class="rank-score" data-i18n="entertainment_page.rank_sc3">9850 pts</span></li>
+                </ul>
+                <a href="#" class="ent-link" data-i18n="entertainment_page.check_rank">查看全区战绩</a>
+            </div>
+            <div class="comm-right">
+                <h3 data-i18n="entertainment_page.eco_title">社交竞技生态</h3>
+                <ul class="eco-list">
+                    <li data-i18n="entertainment_page.eco_l1">小程序一键约局，查看全国实时排名，点赞互动，沉淀私域流量</li>
+                    <li data-i18n="entertainment_page.eco_l2">现场大屏直播对战画面，支持全网推流，让每一场对战都成为社交圈的焦点</li>
+                    <li data-i18n="entertainment_page.eco_l3">季度赛季结算，顶尖玩家赢取限定潮玩奖励</li>
+                </ul>
+                <a href="#" class="ent-link" data-i18n="entertainment_page.learn_more">了解更多</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 商业解决方案 (不变) -->
+    <section class="ent-solutions">
+        <h2 data-i18n="entertainment_page.sol_title">全方位商业解决方案</h2>
+        <p data-i18n="entertainment_page.sol_sub">低门槛投入，标准化输出，极速回本</p>
+        <div class="sol-data-grid">
+            <div class="sol-item"><span class="sol-num" data-i18n="entertainment_page.sol_n1">8W</span><span class="sol-desc" data-i18n="entertainment_page.sol_d1">单店最低投入</span></div>
+            <div class="sol-item"><span class="sol-num" data-i18n="entertainment_page.sol_n2">1H</span><span class="sol-desc" data-i18n="entertainment_page.sol_d2">快速部署开业</span></div>
+            <div class="sol-item"><span class="sol-num" data-i18n="entertainment_page.sol_n3">30S</span><span class="sol-desc" data-i18n="entertainment_page.sol_d3">快速上手</span></div>
+        </div>
+    </section>
+
+    <!-- 合作模式 (图1样式：底图背景，无边框纯文本，无悬停效果) -->
+    <section class="ent-coop-models-flat">
+        <div class="coop-bg-img img-placeholder">
+            <!-- 这里放彩色底图 -->
+            <img src="images/en2.webp" alt="合作背景">
+        </div>
+        <div class="coop-cards-wrapper">
+            <div class="coop-card-flat">
+                <h3 data-i18n="entertainment_page.coop_1_title">联运合作</h3>
+                <p data-i18n="entertainment_page.coop_1_desc">现有VR门店零成本升级<br>引入POONG!内容生态</p>
+            </div>
+            <div class="coop-card-flat">
+                <h3 data-i18n="entertainment_page.coop_2_title">单店加盟</h3>
+                <p data-i18n="entertainment_page.coop_2_desc">全套输出标准化运营体系<br>保姆式开店指导</p>
+            </div>
+            <div class="coop-card-flat">
+                <h3 data-i18n="entertainment_page.coop_3_title">区域代理</h3>
+                <p data-i18n="entertainment_page.coop_3_desc">独家区域保护<br>享受拓店高额奖励与流水分成</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. IP 矩阵 (无文字，长方形图片，带悬停放大效果) -->
+    <section class="ent-ip-matrix-full">
+        <div class="ent-title-center">
+            <h2 data-i18n="entertainment_page.ip_title">潮玩IP矩阵：<br>有温度的数字伙伴</h2>
+            <p data-i18n="entertainment_page.ip_desc">POONG!构建专属世界观与原创IP集群<br>一群由荒诞实验诞生的“泡泡朋友”，带着“自恋、傻萌、暴躁、搞怪”的鲜明性格<br>成为游戏对战中的虚拟伙伴与线下潮玩主角</p>
+        </div>
+        <div class="ip-grid-full">
+            <!-- 删除了内部文字，纯图片展示 -->
+            <div class="ip-item-flat img-placeholder"><img src="images/en3-1.webp" alt="Red"></div>
+            <div class="ip-item-flat img-placeholder"><img src="images/en3-2.webp" alt="Yellow"></div>
+            <div class="ip-item-flat img-placeholder"><img src="images/en3-3.webp" alt="Orange"></div>
+            <div class="ip-item-flat img-placeholder"><img src="images/en3-4.webp" alt="Blue"></div>
+            <div class="ip-item-flat img-placeholder"><img src="images/en3-5.webp" alt="Green"></div>
+            <div class="ip-item-flat img-placeholder"><img src="images/en3-6.webp" alt="Purple"></div>
+        </div>
+    </section>
+
+    <!-- 9. 衍生潮玩 (改为一张大图展示) -->
+    <section class="ent-derivatives-full">
+        <div class="deriv-text-center">
+            <h3 data-i18n="entertainment_page.deriv_title">衍生潮玩生态</h3>
+            <p data-i18n="entertainment_page.deriv_desc">基于IP开发了包括限定版公仔、盲盒、手办、钥匙扣、潮流贴纸<br>等在内的全系列周边产品</p>
+        </div>
+        <!-- 一张满宽或大尺寸的图片占位 -->
+        <div class="deriv-single-img img-placeholder">
+            <img src="images/en4.webp" alt="衍生潮玩大图">
+        </div>
+    </section>
+
+    <!-- 10. 托店推广 (保持原样) -->
+    <section class="ent-promo">
+        <h2 data-i18n="entertainment_page.promo_title">托店推广箱<br>极速开店</h2>
+        <p data-i18n="entertainment_page.promo_desc">Pico企业版MR头显*4 \ Pico专属充电宝*4 \ PC服务器*1路由器*165寸投影仪*1收银pos机*1音响*1</p>
+        <div class="promo-img img-placeholder"><img src="images/en5.webp" alt="开店设备"></div>
+    </section>
+
+    <!-- 11. 商业落地案例 (满宽无缝) -->
+    <section class="ent-cases-full">
+        <div class="ent-title-center">
+            <h2 data-i18n="entertainment_page.cases_title">商业落地案例</h2>
+        </div>
+        <div class="ent-case-grid-full">
+            <div class="ent-case-item-full">
+                <div class="case-thumb-full img-placeholder"><img src="images/en6-1.webp" alt="案例1"></div>
+                <div class="case-info-full">
+                    <h4 data-i18n="entertainment_page.shop1_name">XXXXX店</h4>
+                    <p data-i18n="entertainment_page.shop1_desc">无背包 · 无背心 · 零束缚</p>
+                </div>
+            </div>
+            <div class="ent-case-item-full">
+                <div class="case-thumb-full img-placeholder"><img src="images/en6-2.webp" alt="案例2"></div>
+                <div class="case-info-full">
+                    <h4 data-i18n="entertainment_page.shop2_name">XXXXX店</h4>
+                    <p data-i18n="entertainment_page.shop2_desc">团队竞技/大逃杀/群体打怪</p>
+                </div>
+            </div>
+            <div class="ent-case-item-full">
+                <div class="case-thumb-full img-placeholder"><img src="images/en6-3.webp" alt="案例3"></div>
+                <div class="case-info-full">
+                    <h4 data-i18n="entertainment_page.shop3_name">XXXXX店</h4>
+                    <p data-i18n="entertainment_page.shop3_desc">2分钟/局 · 健身娱乐两不误</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新增：CTA上方的平铺大图 (加入了无缝处理 class) -->
+    <section class="ent-pre-cta-img img-placeholder gapless-bottom">
+        <img src="images/en7.webp" alt="加入POONG前的大图">
+    </section>
+
+    <!-- 底部行动号召 (加入了无缝处理 class) -->
+    <section class="cta-banner-new gapless-top">
+        <div class="cta-bg-img img-placeholder">
+            <img src="images/en8.webp" alt="加入我们背景图">
+        </div>
+        <div class="cta-content-overlay">
+            <h3 data-i18n="entertainment_page.cta_main">加入POONG!共创娱乐新生态</h3>
+            <p data-i18n="entertainment_page.cta_desc">让运动更好玩，让娱乐更健康</p>
+            <a href="contact.html" class="btn-primary" data-i18n="entertainment_page.cta_btn">联系我们</a>
+        </div>
+    </section>
+
+    
+    <!-- 页脚 (标题已改为链接) -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="logo-img-placeholder"><img src="images/hummingbird-logo2.png" alt="Footer Logo"></div>
+            </div>
+            <div class="footer-links">
+                
+                <!-- AI业务 -> ai.html -->
+                <div class="footer-col">
+                    <h4><a href="ai.html" data-i18n="footer.col1_title">AI业务</a></h4>
+                    <ul>
+                        <li><a href="ai.html#case-agent" data-i18n="footer.col1_l1">AI智能体</a></li>
+                        <li><a href="ai.html#case-bank" data-i18n="footer.col1_l2">AI银行服务</a></li>
+                        <li><a href="ai.html#case-edu" data-i18n="footer.col1_l3">AI教育</a></li>
+                    </ul>
+                </div>
+
+                <!-- 数字孪生 -> digital.html -->
+                <div class="footer-col">
+                    <h4><a href="digital.html" data-i18n="footer.col2_title">数字孪生</a></h4>
+                    <ul>
+                        <li><a href="digital.html#ind-sim" data-i18n="footer.col2_l1">工业仿真</a></li>
+                        <li><a href="digital.html#emg-sft" data-i18n="footer.col2_l2">应急安全</a></li>
+                        <li><a href="digital.html#smt-cty" data-i18n="footer.col2_l3">智慧城市</a></li>
+                    </ul>
+                </div>
+
+                <!-- 文旅 -> tourism.html -->
+                <div class="footer-col">
+                    <h4><a href="tourism.html" data-i18n="footer.col3_title">文旅</a></h4>
+                    <ul>
+                        <li><a href="tourism.html#cat-online" data-i18n="footer.col3_l1">线上数字内容</a></li>
+                        <li><a href="tourism.html#cat-offline" data-i18n="footer.col3_l2">线下数字内容</a></li>
+                        <li><a href="tourism.html#cat-shoot" data-i18n="footer.col3_l3">拍摄</a></li>
+                    </ul>
+                </div>
+
+                <!-- 娱乐 -> entertainment.html -->
+                <div class="footer-col">
+                    <h4><a href="entertainment.html" data-i18n="footer.col4_title">娱乐</a></h4>
+                    <ul>
+                        <li><a href="entertainment.html" data-i18n="footer.col4_l1">POONG</a></li>
+                    </ul>
+                </div>
+
+                <!-- 联系我们 -> contact.html -->
+                <div class="footer-col contact-col">
+                    <h4><a href="contact.html" data-i18n="footer.col5_title">联系我们</a></h4>
+                    <ul>
+                        <li><a href="contact.html" data-i18n="footer.col5_l1">北京|沈阳|日本|大阪|新加坡</a></li>
+                        <li><a href="contact.html" data-i18n="footer.col5_l2">商务咨询</a></li>
+                        <li><a href="mailto:business@hummingbird.com" data-i18n="footer.col5_l3">business@hummingbird.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright"><p data-i18n="footer.copyright">2026 · 蜂鸟互动 · All rights reserved</p></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

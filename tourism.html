@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文旅 - 蜂鸟互动</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+     <!-- 统一的顶部导航栏 (新版结构) -->
+    <header class="header">
+        <!-- 左侧 Logo -->
+        <div class="logo">
+            <!-- 这里的 src 填您真实的 logo 路径 -->
+            <img class="logo-img" src="images/hummingbird-logo1.png" alt="Logo">
+            <span data-i18n="nav.logo">蜂鸟互动</span>
+        </div>
+
+        <!-- 中间 导航链接 -->
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html" class="active" data-i18n="nav.home">首页</a>
+            <a href="ai.html" data-i18n="nav.ai">AI业务</a>
+            <a href="digital.html" data-i18n="nav.digital">数字孪生</a>
+            <a href="tourism.html" data-i18n="nav.tourism">文旅</a>
+            <a href="entertainment.html" data-i18n="nav.entertainment">娱乐</a>
+            <a href="about.html" data-i18n="nav.about">关于我们</a>
+            <a href="contact.html" data-i18n="nav.contact">联系我们</a>
+        </nav>
+
+        <!-- 右侧 语言与手机菜单 -->
+        <div class="header-right">
+            <!-- 语言切换 -->
+            <div class="lang-switcher" id="lang-switcher">
+                <div class="globe-icon" id="lang-btn">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                </div>
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <!-- 这里调用 JS 函数切换 -->
+                    <div class="lang-option" onclick="changeLanguage('zh')">中文</div>
+                    <div class="lang-option" onclick="changeLanguage('en')">English</div>
+                </div>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <div class="menu-toggle" id="mobile-menu-btn">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主视觉 (带背景图) -->
+    <section class="hero-tourism has-bg-img">
+        <img class="hero-bg" src="images/index3.webp" alt="文旅大背景">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 data-i18n="tourism_page.hero_title">数智文旅<br>重构体验新边界</h1>
+            <p data-i18n="tourism_page.hero_desc">以数字技术激活文旅资源，打通线上云端游戏与线下沉浸场景<br>让文化“活”起来，让旅行“潮”起来</p>
+        </div>
+    </section>
+
+    <!-- 居中段落介绍 -->
+    <section class="dt-intro">
+        <p data-i18n="tourism_page.intro_p1">当文化遗产遇上数字技术，当旅行体验融入智能创新</p>
+        <p data-i18n="tourism_page.intro_p2">我们以“科技+文旅”为内核，打通线上线下场景，打造集沉浸式体验、数字化传播、创意化拍摄于一体的文旅全链条服务</p>
+        <p data-i18n="tourism_page.intro_p3">让文旅资源“活起来”，让旅行体验“潮起来”</p>
+    </section>
+
+    <!-- BEYOND REALITY 四宫格 -->
+    <section class="beyond-reality">
+        <div class="beyond-header">
+            <h2 data-i18n="tourism_page.beyond_title">BEYOND<br>REALITY</h2>
+            <p data-i18n="tourism_page.beyond_sub">重塑感知 · 定义未来</p>
+        </div>
+        <div class="beyond-grid">
+            <div class="beyond-card">
+                <span class="mod-tag" data-i18n="tourism_page.m1_tag">01.TIME</span>
+                <h3 data-i18n="tourism_page.m1_title">突破时空限制</h3>
+                <p data-i18n="tourism_page.m1_desc">多物理场耦合算法 / 高精度三维重建 / 毫米级复刻</p>
+            </div>
+            <div class="beyond-card">
+                <span class="mod-tag" data-i18n="tourism_page.m2_tag">02.CONTENT</span>
+                <h3 data-i18n="tourism_page.m2_title">体验内容丰富</h3>
+                <p data-i18n="tourism_page.m2_desc">数字仿真引擎 / 事前预警</p>
+            </div>
+            <div class="beyond-card">
+                <span class="mod-tag" data-i18n="tourism_page.m3_tag">03.INTERACTIVE</span>
+                <h3 data-i18n="tourism_page.m3_title">互动性强</h3>
+                <p data-i18n="tourism_page.m3_desc">以毫秒级接收最新数据，并立即触发业务逻辑的运作模式</p>
+            </div>
+            <div class="beyond-card">
+                <span class="mod-tag" data-i18n="tourism_page.m4_tag">04.MODULE</span>
+                <h3 data-i18n="tourism_page.m4_title">沉浸式体验</h3>
+                <p data-i18n="tourism_page.m4_desc">多模态感知(视觉、听觉、触觉) 与空间计算</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 锚点导航 -->
+    <section class="services-nav-bar dt-subnav">
+        <a href="#cat-online" data-i18n="tourism_page.nav_online">线上数字内容</a>
+        <a href="#cat-offline" data-i18n="tourism_page.nav_offline">线下数字内容</a>
+        <a href="#cat-shoot" data-i18n="tourism_page.nav_shoot">拍摄</a>
+    </section>
+
+    <!-- 分类一：线上数字内容 -->
+    <section class="dt-category" id="cat-online">
+        <div class="dt-cat-header">
+            
+            <h2 data-i18n="tourism_page.cat_online_title">线上数字内容</h2>
+            <p data-i18n="tourism_page.cat_online_desc">数字化形式生产、存储并通过网络传播与交互的信息载体，是数字空间中最基础的构成单元</p>
+        </div>
+        <div class="dt-case-list">
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_on_1_title">新奥莱-南浔古镇</h3>
+                <p data-i18n="tourism_page.case_on_1_desc">还原南浔古镇的自然景观和街区，用户能够在这个数字世界中探索古镇文化与建筑。打破传统电商经营模式，采用线上元宇宙加线下实体结合，运用AR/VR/AI数字孪生等技术为用户打造一个24小时在线的元宇宙商城。用户在商城中通过自己的虚拟化身在各种虚拟店铺中自由漫游，体验从试穿虚拟服饰到购买数字商品的全过程。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism1.webp" alt="案例展示图"></div>
+            </div>
+            
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_on_3_title">贵酒集团-17光年元宇宙-私域商业元宇宙</h3>
+                <p data-i18n="tourism_page.case_on_3_desc">通过二维码引导，用户能够透明数字人和客进入元宇宙世界。与好友互动，体验品牌故事并参与各类有趣的活动。打破传统电商与品牌传播模式，提升与消费者的互动与粘性。构建一个以虚拟社交、娱乐与经济互动为核心的数字世界，让用户能够在沉浸式环境中探索、互动与交易。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism2.webp" alt="案例展示图"></div>
+            </div>
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_on_4_title">iBOX-元宇宙线上演唱会</h3>
+                <p data-i18n="tourism_page.case_on_4_desc">一场创新的虚拟音乐盛宴，它结合虚拟现实(VR)和区块链技术，让用户能以虚拟化身沉浸于音乐盛宴。通过iBox平台，观众在虚拟世界触享音乐表演，与粉丝互动，收藏演唱会相关NFT。元宇宙线上演唱会突破传统，以沉浸式体验带来全新参与感和互动性。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism3.webp" alt="案例展示图"></div>
+            </div>
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_on_5_title">恐龙主题乐园线上数字化元宇宙</h3>
+                <p data-i18n="tourism_page.case_on_5_desc">乘势依托丰富恐龙文化资源，打造“ 极客建村”数字文旅新城，项目结合数字技术与元宇宙，构建沉浸式白垩纪体验，以推动当地旅游创新与经济振兴。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism4.webp" alt="案例展示图"></div>
+            </div>
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_on_6_title">洛克菲勒-数字艺术馆</h3>
+                <p data-i18n="tourism_page.case_on_6_desc">艺术品通过720度虚拟空间立体展示，大众互动点评，衍生商城提供丰富的艺术衍生品交易。社交和交易功能强大，可自建虚拟形象。展示社交信息并实时互动。娱乐体验丰富，寻宝、共创等模式兼具趣味与价值，为艺术爱好者打造独特的艺术之旅。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism5.webp" alt="案例展示图"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 分类二：线下数字内容 (黑底) -->
+    <section class="dt-category bg-dark" id="cat-offline">
+        <div class="dt-cat-header">
+            
+            <h2 data-i18n="tourism_page.cat_offline_title">线下数字内容</h2>
+            <p data-i18n="tourism_page.cat_offline_desc">融入物理空间、依托终端设备呈现、支持现场实时交互的数字信息载体</p>
+        </div>
+        <div class="dt-case-list">
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_off_1_title">VR剑门关</h3>
+                <p data-i18n="tourism_page.case_off_1_desc">“VR剑门关”是2024年由四川广元市文化旅游部门推出的全新旅游体验项目干年战役。以智能微观为核心，聚焦虚拟增强现实、虚拟仿真、全息显示3大产业方向，全力发展教育内容、5G网络通信、计算机信息技术、智能终端、数字展示等8大产业细分，利用VR技术，将听不见的文辞古语、秀丽山河、文化遗产带到世界的每一个角落，让体验者跨越时间和空间，与现实情境感受并了解历史文化及发展风光。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism6.webp" alt="案例展示图"></div>
+            </div>
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_off_2_title">VR小镇-VR漫游黄山+AR博物馆</h3>
+                <p data-i18n="tourism_page.case_off_2_desc">由黄山市黄山区政府主导的一个数字文旅项目。结合黄山区当地文化、资源等元素，以第一视角的形式带入到游戏场景中，让游客感受到数字科技与历史文化相结合的文化内涵，通过AR技术结合线下实体场景，对历史文化进行科普性教育，游客不仅能在游戏的同时学习更多有关黄山的历史文化知识。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism7.webp" alt="案例展示图"></div>
+            </div>
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_off_3_title">航天科技馆数字化升级</h3>
+                <p data-i18n="tourism_page.case_off_3_desc">作为具有重大意义的航天科普基地，其涵盖了多个展区，包含呈现近半个世纪中国航天的壮丽发展历程的百年航天，利用先进技术模拟宇宙奇妙探索的星空空间以及全面展示国家在航天领域的卓越成就的航天成就等8个板块。通过数字化的手段，为公众打造了一个集科普、体验、互动为一体的高品质航天科技馆，推动航天文化的广泛传播与持续发展。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism8.webp" alt="案例展示图"></div>
+            </div>
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_off_4_title">武隆仙女山树新科技赋能数字生态</h3>
+                <p data-i18n="tourism_page.case_off_4_desc">全国首个微地形数字生态探索体验中心，致力于打造中国首个元宇宙沉浸文旅商业新圣地，全力建设成为全球具有影响力的国际文旅元宇宙产业创新基地。在这里用户可以突破时空限制，在主题区与数字化身，一键抵达浩瀚缥缈的星辰，无论是漫天飞雪的极地、仙女山的微观风光，还是戈壁滩的辉煌，都能沉浸式微游。同时便捷的社交分享功能，让用户随时交流所思所想，共同结现武隆的神奇魅力。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism9.webp" alt="案例展示图"></div>
+            </div>
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_off_5_title">四川安岳生物礁沉浸空间</h3>
+                <p data-i18n="tourism_page.case_off_5_desc">生物礁沉浸空间通过营造一个栩栩如生的海底世界，带领观众进入一个充满生物的海洋生态环境。空间内的海洋景观包括五彩斑斓的珊瑚礁、悠游的海龟、游动的鱼群等多种海洋生物，展现出海底世界的动荡与活力。这个沉浸式的展示不仅让观众感受到大自然的神奇和美丽，还通过虚拟展示的方式提供了关于海洋生物和生态环境的科普信息，增强了观众对海洋保护与可持续发展的认识。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism10.webp" alt="案例展示图"></div>
+            </div>
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_off_6_title">三亚信投-VR体验馆-鹿回头景区</h3>
+                <p data-i18n="tourism_page.case_off_6_desc">国内首屈一指的大空间多人互动VR主题公园，结合景区文化，设有“鹿回头传奇”星航战队”VR影院”等多款VR互动娱乐产品，集沉浸感、交互性和刺激性于一体的大型VR游乐，给大众带来令同行业最先进的虚拟现实技术和最新颖的沉浸式体验。公园内还提供了满足玩家需要虚拟现实体验所必要的设施和空间。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism11.webp" alt="案例展示图"></div>
+            </div>
+            
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_off_8_title">侏罗纪海底大空间</h3>
+                <p data-i18n="tourism_page.case_off_8_desc">侏罗纪海底大空间项目以沉浸式数字内容为核心，打造一个引人入胜的虚拟海底世界，让游客穿越回现代海底到远古侏罗纪时期的壮丽景观。通过先进的VR技术和大空间技术，游客将置身于逼真的海洋生态系统中，探索远古海洋的奇异生物、神秘海底洞穴、以及丰富多样的海洋生物群落。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism12.webp" alt="案例展示图"></div>
+            </div>
+            
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_off_10_title">商圈导览与互动</h3>
+                <p data-i18n="tourism_page.case_off_10_desc">智能AR导览系统，通过定位融合技术，为建筑和场景的实体交互信息与商业推荐，并提供动态路线规划。结合互动式教育艺术与数字广告，实现场景化营销，有效提升品牌吸引力与顾客沉浸式体验。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism13.webp" alt="案例展示图"></div>
+            </div>
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_off_11_title">文博导览讲解互动</h3>
+                <p data-i18n="tourism_page.case_off_11_desc">3D虚拟导游员，提供拟人化互动解答与问路。结合高精度动态路径指引与文物识别技术，可实现藏品细节的深度解析与个性化参观路线规划，打造智能化、沉浸式的文化导览新体验。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism14.webp" alt="案例展示图"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 分类三：拍摄 -->
+    <section class="dt-category" id="cat-shoot">
+        <div class="dt-cat-header">
+            
+            <h2 data-i18n="tourism_page.cat_shoot_title">视频拍摄</h2>
+            <p data-i18n="tourism_page.cat_shoot_desc">将视觉影像转化为电子信号或数字资产的过程，是影像内容生产的基础采集环节</p>
+        </div>
+        <div class="dt-case-list">
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_sh_1_title">哪吒汽车-AR直播虚拟线上发布会</h3>
+                <p data-i18n="tourism_page.case_sh_1_desc">哪吒U/S/V三大车型线上发布会，三维技术构建的虚拟发布会舞台与真人影像进行合成。随着发布会流程切换不同主题特效，把真实拍摄的车辆影像数据映射到舞台之中，从多个维度展示产品内外细节。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism15.webp" alt="案例展示图"></div>
+            </div>
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_sh_2_title">机动战姬VR宣传片</h3>
+                <p data-i18n="tourism_page.case_sh_2_desc">360°VR全景机动战姬重装上线展示，依托先进的VR技术，为玩家打造逼真的星际世界。在无人幸存的沦陷区和居高临下的军事基地中，玩家以指挥官身份，借助高度还原的场景与光影效果，指挥战姬参与微操爽快战斗。通过精准的坐标点触和顺畅的交互设计，提升玩家的体验感，带来策略与社交互动的双重体验。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism16.webp" alt="案例展示图"></div>
+            </div>
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_sh_3_title">奔腾AR汽车发布会</h3>
+                <p data-i18n="tourism_page.case_sh_3_desc">现场AR特效展示车辆风阻效果，汽车在动态场景中表现其空气动力学性能和稳定表现，展现其技术实力。为现场观众呈现直观震撼视觉体验，增加发布会的科技感。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism17.webp" alt="案例展示图"></div>
+            </div>
+            <div class="dt-case-item">
+                <h3 data-i18n="tourism_page.case_sh_4_title">易烊千玺18岁生日会-与数字人共舞红豆</h3>
+                <p data-i18n="tourism_page.case_sh_4_desc">易烊千玺18岁成人礼演唱会上，通过实时动捕及面部捕捉技术，辅以高度逼真的渲染与实时交互，易烊千玺与数字人“红豆”完美配合。不仅展示了数字技术的无限可能，也为粉丝带来了一场跨越虚拟与现实的视听盛宴。</p>
+                <div class="case-single-img img-placeholder"><img src="images/tourism18.webp" alt="案例展示图"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部行动号召 -->
+    <section class="cta-banner">
+        <h3 data-i18n="tourism_page.cta_title">开启合作之旅</h3>
+        <p data-i18n="tourism_page.cta_desc">与我们一起打造下一代智能文旅体验</p>
+        <a href="contact.html" class="btn-primary" data-i18n="tourism_page.cta_btn">联系我们</a>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo"><div class="logo-img-placeholder"><img src="images/hummingbird-logo2.png" alt="Footer Logo"></div></div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4><a href="ai.html" data-i18n="footer.col1_title">AI业务</a></h4>
+                    <ul>
+                        <li><a href="ai.html#case-agent" data-i18n="footer.col1_l1">AI智能体</a></li>
+                        <li><a href="ai.html#case-bank" data-i18n="footer.col1_l2">AI银行服务</a></li>
+                        <li><a href="ai.html#case-edu" data-i18n="footer.col1_l3">AI教育</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4><a href="digital.html" data-i18n="footer.col2_title">数字孪生</a></h4>
+                    <ul>
+                        <li><a href="digital.html#ind-sim" data-i18n="footer.col2_l1">工业仿真</a></li>
+                        <li><a href="digital.html#emg-sft" data-i18n="footer.col2_l2">应急安全</a></li>
+                        <li><a href="digital.html#smt-cty" data-i18n="footer.col2_l3">智慧城市</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4><a href="tourism.html" data-i18n="footer.col3_title">文旅</a></h4>
+                    <ul>
+                        <li><a href="tourism.html#cat-online" data-i18n="footer.col3_l1">线上数字内容</a></li>
+                        <li><a href="tourism.html#cat-offline" data-i18n="footer.col3_l2">线下数字内容</a></li>
+                        <li><a href="tourism.html#cat-shoot" data-i18n="footer.col3_l3">拍摄</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4><a href="entertainment.html" data-i18n="footer.col4_title">娱乐</a></h4>
+                    <ul><li><a href="entertainment.html" data-i18n="footer.col4_l1">POONG</a></li></ul>
+                </div>
+                <div class="footer-col contact-col">
+                    <h4><a href="contact.html" data-i18n="footer.col5_title">联系我们</a></h4>
+                    <ul>
+                        <li><a href="contact.html" data-i18n="footer.col5_l1">北京|沈阳|日本|大阪|新加坡</a></li>
+                        <li><a href="contact.html" data-i18n="footer.col5_l2">商务咨询</a></li>
+                        <li><a href="mailto:business@hummingbird.com" data-i18n="footer.col5_l3">business@hummingbird.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright"><p data-i18n="footer.copyright">2026 · 蜂鸟互动 · All rights reserved</p></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

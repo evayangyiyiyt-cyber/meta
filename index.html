@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蜂鸟互动 - Hummingbird</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    
+    <!-- 统一的顶部导航栏 (新版结构) -->
+    <header class="header">
+        <!-- 左侧 Logo -->
+        <div class="logo">
+            <!-- 这里的 src 填您真实的 logo 路径 -->
+            <img class="logo-img" src="images/hummingbird-logo1.png" alt="Logo">
+            <span data-i18n="nav.logo">蜂鸟互动</span>
+        </div>
+
+        <!-- 中间 导航链接 -->
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html" class="active" data-i18n="nav.home">首页</a>
+            <a href="ai.html" data-i18n="nav.ai">AI业务</a>
+            <a href="digital.html" data-i18n="nav.digital">数字孪生</a>
+            <a href="tourism.html" data-i18n="nav.tourism">文旅</a>
+            <a href="entertainment.html" data-i18n="nav.entertainment">娱乐</a>
+            <a href="about.html" data-i18n="nav.about">关于我们</a>
+            <a href="contact.html" data-i18n="nav.contact">联系我们</a>
+        </nav>
+
+        <!-- 右侧 语言与手机菜单 -->
+        <div class="header-right">
+            <!-- 语言切换 -->
+            <div class="lang-switcher" id="lang-switcher">
+                <div class="globe-icon" id="lang-btn">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                </div>
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <!-- 这里调用 JS 函数切换 -->
+                    <div class="lang-option" onclick="changeLanguage('zh')">中文</div>
+                    <div class="lang-option" onclick="changeLanguage('en')">English</div>
+                </div>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <div class="menu-toggle" id="mobile-menu-btn">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主视觉区 -->
+    <section class="hero has-bg-img">
+        <!-- 填写 src 即可自动显示背景大图 -->
+        <img class="hero-bg" src="images/index-hero.webp" alt="首页大背景">
+        <div class="hero-overlay"></div> <!-- 保护文字的暗色遮罩 -->
+        
+        <div class="hero-content">
+            <div class="hero-top-text">
+                <span data-i18n="hero.mastering">MASTERING</span>
+                <i data-i18n="hero.techniques">the TECHNIQUES</i>
+            </div>
+            <h2 data-i18n="hero.we_are">WE ARE</h2>
+            <h1 data-i18n="hero.hummingbird">HUMMINGBIRD</h1>
+            <h3 data-i18n="hero.hummingbird_zh">蜂鸟互动</h3>
+            <div class="hero-slogan">
+                <p data-i18n="hero.slogan1">我们致力于创造品质，创造快乐</p>
+                <p data-i18n="hero.slogan2" class="en-slogan">We are committed to creating quality and happiness</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们介绍 -->
+    <section class="about-intro">
+        <p data-i18n="about.p1">蜂鸟互动成立于2013年，是聚焦数智技术赋能产业的创新科技公司</p>
+        <p data-i18n="about.p2">我们以AI基座重构行业效率，以数字孪生激活产业价值，以数智文旅焕新体验边界，更以MR娱乐解锁线下新娱乐</p>
+        <p data-i18n="about.p3">我们致力于在每一个产业场景——无论是企业决策、实体运营还是消费体验中</p>
+        <p data-i18n="about.p4">为客户创造更智能、更沉浸、更具价值的数智化未来体验</p>
+    </section>
+
+
+
+    <!-- 案例展示区 -->
+    <section class="cases-section">
+        <!-- Case 01: AI基座 -->
+        <!-- 增加 id="home-ai" 用于锚点定位 -->
+        <div class="case-row" id="home-ai">
+            <div class="case-text">
+                <span class="case-number" data-i18n="cases.c1_subtitle">CASE 01</span>
+                <h2 data-i18n="cases.c1_title">AI基座</h2>
+                <p class="case-desc" data-i18n="cases.c1_desc">以企业级AI基座为核心，打造智能体、场景化机器人与个性化教育方案，重塑行业效率新范式。</p>
+                <ul class="case-list">
+                    <li data-i18n="cases.c1_l1">AI智能体</li>
+                    <li data-i18n="cases.c1_l2">AI银行服务</li>
+                    <li data-i18n="cases.c1_l3">AI教育</li>
+                </ul>
+                <!-- 修改 href 跳转到 ai.html -->
+                <a href="ai.html" class="learn-more" data-i18n="cases.learn_more">了解更多</a>
+            </div>
+            <div class="case-img img-placeholder"><img src="images/index1.webp" alt="AI基座图片"></div>
+        </div>
+
+        <!-- Case 02: 数字孪生 -->
+        <!-- 增加 id="home-digital" -->
+        <div class="case-row reverse" id="home-digital">
+            <div class="case-text align-right">
+                <span class="case-number" data-i18n="cases.c2_subtitle">CASE 02</span>
+                <h2 data-i18n="cases.c2_title">数字孪生</h2>
+                <p class="case-desc" data-i18n="cases.c2_desc">以企业级AI基座为核心，打造智能体、场景化机器人与个性化教育方案，重塑行业效率新范式</p>
+                <ul class="case-list right-dots">
+                    <li data-i18n="cases.c2_l1">工业仿真</li>
+                    <li data-i18n="cases.c2_l2">应急安全</li>
+                    <li data-i18n="cases.c2_l3">智慧城市</li>
+                </ul>
+                <!-- 修改 href 跳转到 digital.html -->
+                <a href="digital.html" class="learn-more" data-i18n="cases.learn_more">了解更多</a>
+            </div>
+            <div class="case-img img-placeholder"><img src="images/index2.webp" alt="数字孪生图片"></div>
+        </div>
+
+        <!-- Case 03: 文旅 -->
+        <!-- 增加 id="home-tourism" -->
+        <div class="case-row" id="home-tourism">
+            <div class="case-text">
+                <span class="case-number" data-i18n="cases.c3_subtitle">CASE 03</span>
+                <h2 data-i18n="cases.c3_title">文旅</h2>
+                <p class="case-desc" data-i18n="cases.c3_desc">以科技重构文旅边界，打通线上云端内容与线下沉浸场景，让文化活态传播，让旅行趣味升级。</p>
+                <ul class="case-list">
+                    <li data-i18n="cases.c3_l1">线上数字内容</li>
+                    <li data-i18n="cases.c3_l2">线下数字内容</li>
+                    <li data-i18n="cases.c3_l3">创意视频拍摄</li>
+                </ul>
+                <!-- 修改 href 跳转到 tourism.html -->
+                <a href="tourism.html" class="learn-more" data-i18n="cases.learn_more">了解更多</a>
+            </div>
+            <div class="case-img img-placeholder"><img src="images/index3.webp" alt="文旅图片"></div>
+        </div>
+
+        <!-- Case 04: 娱乐 -->
+        <!-- 增加 id="home-entertainment" -->
+        <div class="case-row reverse" id="home-entertainment">
+            <div class="case-text align-right">
+                <span class="case-number" data-i18n="cases.c4_subtitle">CASE 04</span>
+                <h2 data-i18n="cases.c4_title">娱乐</h2>
+                <p class="case-desc" data-i18n="cases.c4_desc">MR科技碰撞潮玩基因，打造沉浸式对战+轻量运动+社交互动的新型娱乐生态，解锁线下快乐新体验</p>
+                <ul class="case-list right-dots">
+                    <li data-i18n="cases.c4_l1">MR多人竞技</li>
+                    <li data-i18n="cases.c4_l2">潮玩IP</li>
+                    <li data-i18n="cases.c4_l3">多元合作模式</li>
+                </ul>
+                <!-- 修改 href 跳转到 entertainment.html -->
+                <a href="entertainment.html" class="learn-more" data-i18n="cases.learn_more">了解更多</a>
+            </div>
+            <div class="case-img img-placeholder"><img src="images/index4.webp" alt="娱乐图片"></div>
+        </div>
+    </section>
+
+
+    <!-- 企业风采 -->
+    <section class="corporate-spirit">
+        <div class="section-title-wrapper">
+            
+            <h2 data-i18n="corporate.title">企业风采</h2>
+            
+        </div>
+        <div class="full-width-placeholder img-placeholder"><img src="images/index-photowall.webp" alt="企业风采大图"></div>
+    </section>
+
+    <!-- 合作伙伴 (新版三分类结构) -->
+    <section class="partners-section">
+        <div class="section-title-wrapper">
+            <h2 data-i18n="partners.title">合作伙伴</h2>
+            <p data-i18n="partners.desc">与众多知名企业建立长期战略合作关系</p>
+        </div>
+
+        <!-- 1. 智慧出行 -->
+        <div class="partner-group">
+            <h3 data-i18n="partners.cat1">智慧出行合作伙伴</h3>
+            <!-- 请替换为您本地的图片路径，例如 images/partner1.png -->
+            <img class="partner-img" src="images/partner1.png" alt="智慧出行合作伙伴">
+        </div>
+
+        <!-- 2. 低空飞行 -->
+        <div class="partner-group">
+            <h3 data-i18n="partners.cat2">低空飞行合作伙伴</h3>
+            <img class="partner-img" src="images/partner2.png" alt="低空飞行合作伙伴">
+        </div>
+
+        <!-- 3. 其他 -->
+        <div class="partner-group">
+            <h3 data-i18n="partners.cat3">其他合作伙伴</h3>
+            <img class="partner-img" src="images/partner3.png" alt="其他合作伙伴">
+        </div>
+    </section>
+
+    <!-- 页脚 (标题已改为链接) -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="logo-img-placeholder"><img src="images/hummingbird-logo2.png" alt="Footer Logo"></div>
+            </div>
+            <div class="footer-links">
+                
+                <!-- AI业务 -> ai.html -->
+                <div class="footer-col">
+                    <h4><a href="ai.html" data-i18n="footer.col1_title">AI业务</a></h4>
+                    <ul>
+                        <li><a href="ai.html#case-agent" data-i18n="footer.col1_l1">AI智能体</a></li>
+                        <li><a href="ai.html#case-bank" data-i18n="footer.col1_l2">AI银行服务</a></li>
+                        <li><a href="ai.html#case-edu" data-i18n="footer.col1_l3">AI教育</a></li>
+                    </ul>
+                </div>
+
+                <!-- 数字孪生 -> digital.html -->
+                <div class="footer-col">
+                    <h4><a href="digital.html" data-i18n="footer.col2_title">数字孪生</a></h4>
+                    <ul>
+                        <li><a href="digital.html#ind-sim" data-i18n="footer.col2_l1">工业仿真</a></li>
+                        <li><a href="digital.html#emg-sft" data-i18n="footer.col2_l2">应急安全</a></li>
+                        <li><a href="digital.html#smt-cty" data-i18n="footer.col2_l3">智慧城市</a></li>
+                    </ul>
+                </div>
+
+                <!-- 文旅 -> tourism.html -->
+                <div class="footer-col">
+                    <h4><a href="tourism.html" data-i18n="footer.col3_title">文旅</a></h4>
+                    <ul>
+                        <li><a href="tourism.html#cat-online" data-i18n="footer.col3_l1">线上数字内容</a></li>
+                        <li><a href="tourism.html#cat-offline" data-i18n="footer.col3_l2">线下数字内容</a></li>
+                        <li><a href="tourism.html#cat-shoot" data-i18n="footer.col3_l3">拍摄</a></li>
+                    </ul>
+                </div>
+
+                <!-- 娱乐 -> entertainment.html -->
+                <div class="footer-col">
+                    <h4><a href="entertainment.html" data-i18n="footer.col4_title">娱乐</a></h4>
+                    <ul>
+                        <li><a href="entertainment.html" data-i18n="footer.col4_l1">POONG</a></li>
+                    </ul>
+                </div>
+
+                <!-- 联系我们 -> contact.html -->
+                <div class="footer-col contact-col">
+                    <h4><a href="contact.html" data-i18n="footer.col5_title">联系我们</a></h4>
+                    <ul>
+                        <li><a href="contact.html" data-i18n="footer.col5_l1">北京|沈阳|日本|大阪|新加坡</a></li>
+                        <li><a href="contact.html" data-i18n="footer.col5_l2">商务咨询</a></li>
+                        <li><a href="mailto:business@hummingbird.com" data-i18n="footer.col5_l3">business@hummingbird.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright"><p data-i18n="footer.copyright">2026 · 蜂鸟互动 · All rights reserved</p></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -153,4 +153,43 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         });
     }
+// ==========================================
+    // 4. 数字孪生 & 文旅：胶囊导航 点击与滚动监听 (Scroll Spy)
+    // ==========================================
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const dtCategories = document.querySelectorAll('.dt-category'); // 获取所有业务板块
+
+    if (tabBtns.length > 0 && dtCategories.length > 0) {
+        
+        // 1. 点击按钮时，立即高亮当前按钮
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // 2. 页面滚动时，自动计算当前处于哪个板块，并高亮对应的按钮
+        window.addEventListener('scroll', () => {
+            let currentId = '';
+            
+            // 遍历所有板块，计算当前滚动位置
+            dtCategories.forEach(section => {
+                const sectionTop = section.offsetTop;
+                // 减去200是预留顶部导航栏(80px)和胶囊导航(约60px)的高度误差
+                if (pageYOffset >= sectionTop - 200) {
+                    currentId = section.getAttribute('id');
+                }
+            });
+
+            // 移除所有高亮，为当前板块对应的按钮添加高亮
+            tabBtns.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('href') === `#${currentId}`) {
+                    btn.classList.add('active');
+                }
+            });
+        });
+    }
+
 });

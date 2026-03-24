@@ -172,7 +172,22 @@ footer { background-color: #050505; padding: 60px 40px 20px; border-top: 1px sol
 
 .section-title-wrapper { text-align: center; margin-bottom: 50px; }
 .corporate-spirit { padding: 80px 0; background-color: #000; text-align: center;}
-.full-width-placeholder { width: 100%; height: auto; }
+/* 企业风采大图：去除灰色背景，让图片自然撑开 */
+.full-width-placeholder { 
+    width: 100%; 
+    height: auto; 
+    background-color: transparent !important; /* 强制去除灰色背景 */
+}
+
+/* 保证照片墙大图按原比例完整显示，不被挤压 */
+.full-width-placeholder img {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    object-fit: cover;
+    opacity: 1 !important; /* 强制显示图片 */
+}
 
 /* 合作伙伴 */
 .partners-section { padding: 80px 40px; max-width: 1400px; margin: 0 auto; text-align: center; }
@@ -182,7 +197,7 @@ footer { background-color: #050505; padding: 60px 40px 20px; border-top: 1px sol
 .partner-img { width: 100%; height: auto; object-fit: contain; display: block; background-color: transparent !important; border: none !important; border-radius: 8px; max-width: 1200px; margin: 0 auto; opacity: 1 !important; }
 
 /* ==========================================================================
-   7. AI / 数字孪生 / 文旅 共通布局
+   7. AI / 数字孪生 / 文旅 / 联系我们 共通布局
    ========================================================================== */
 .hero-ai.has-bg-img, .hero-digital.has-bg-img, .hero-tourism.has-bg-img, .hero-contact.has-bg-img {
     min-height: 600px !important; display: flex; flex-direction: column; justify-content: center; text-align: left; padding: 40px;
@@ -194,11 +209,10 @@ footer { background-color: #050505; padding: 60px 40px 20px; border-top: 1px sol
 .ai-intro, .dt-intro { background: #000; padding: 80px 20px; text-align: center; }
 .ai-intro p, .dt-intro p { margin-bottom: 10px; color: #ccc; font-size: 15px; line-height: 1.8; }
 
-/* 页面内小导航 */
+/* 首页业务小导航 (保持首页功能正常) */
 .services-nav-bar { display: flex; justify-content: center; gap: 60px; padding: 30px 0; border-top: 1px solid #222; border-bottom: 1px solid #222; }
 .services-nav-bar a { font-size: 16px; cursor: pointer; transition: color 0.3s; color: var(--text-main); text-decoration: none; }
 .services-nav-bar a:hover { color: var(--accent-color); }
-.dt-subnav { background: #000; border-top: 1px solid #1a1a1a; }
 
 /* ==========================================================================
    8. AI 页面 (AI Business)
@@ -225,7 +239,7 @@ footer { background-color: #050505; padding: 60px 40px 20px; border-top: 1px sol
 .ai-bottom-ecology p { font-size: 15px; color: var(--text-muted); margin-bottom: 60px; max-width: 1000px; margin-left: auto; margin-right: auto; padding: 0 20px; }
 
 /* ==========================================================================
-   9. 数字孪生 & 文旅 (Digital Twin & Tourism)
+   9. 数字孪生 & 文旅 (Digital Twin & Tourism) - 升级版黑白排版
    ========================================================================== */
 .beyond-reality { background: #050505; padding: 100px 40px; }
 .beyond-header { text-align: center; margin-bottom: 60px; }
@@ -238,23 +252,66 @@ footer { background-color: #050505; padding: 60px 40px 20px; border-top: 1px sol
 .beyond-card h3 { font-size: 22px; margin-bottom: 15px; }
 .beyond-card p { font-size: 14px; color: var(--text-muted); }
 
-.dt-category { padding: 100px 40px; scroll-margin-top: 100px; background: #0c0c0c; }
-.dt-category.bg-dark { background: #050505; }
-.dt-cat-header { text-align: center; margin-bottom: 80px; }
-.dt-cat-header .en-title { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 10px; font-style: italic;}
-.dt-cat-header h2 { font-size: 40px; font-weight: bold; margin-bottom: 20px; }
-.dt-cat-header p { font-size: 15px; color: #aaa; }
-.dt-case-list { max-width: 1400px; margin: 0 auto; }
-.dt-case-item { margin-bottom: 100px; }
-.dt-case-item:last-child { margin-bottom: 0; }
-.dt-case-item h3 { font-size: 24px; font-weight: bold; margin-bottom: 15px; }
-.dt-case-item p { font-size: 14px; color: #999; margin-bottom: 30px; line-height: 1.8; }
-
-.case-single-img {
-    width: 100%; height: 500px; border-radius: 4px; overflow: hidden; position: relative;
-    background-color: var(--placeholder-bg); margin-top: 20px;
+/* --- 新增：悬浮胶囊导航 --- */
+.cases-tab-nav { 
+    display: flex; justify-content: center; gap: 10px; margin: 0 auto 80px auto; 
+    position: sticky; top: 100px; /* 吸顶效果 */
+    background: rgba(20, 20, 20, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); 
+    z-index: 900; padding: 10px 15px; border-radius: 50px; 
+    width: fit-content; box-shadow: 0 10px 40px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1); 
 }
-.case-single-img img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+.tab-btn { 
+    background: transparent; border: none; color: #888; font-size: 15px; font-weight: 600; 
+    cursor: pointer; padding: 10px 24px; border-radius: 30px; transition: all 0.3s ease; text-decoration: none;
+}
+.tab-btn:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.tab-btn:focus, .tab-btn:active { background: var(--accent-color); color: #000; box-shadow: 0 4px 15px rgba(212, 255, 0, 0.3); }
+
+/* ！！！新增：JS控制的持续高亮状态 ！！！ */
+.tab-btn.active { 
+    background: var(--accent-color) !important; 
+    color: #000 !important; 
+    box-shadow: 0 4px 15px rgba(212, 255, 0, 0.3) !important; 
+}
+
+/* --- 新增：黑白交替分类背景 --- */
+.dt-category { padding: 100px 40px; scroll-margin-top: 150px; background-color: #0c0c0c; }
+/* 偶数分类变为白底 */
+.dt-category:nth-of-type(even) { 
+    background-color: #ffffff !important; 
+    border-top: 1px solid #eeeeee !important; 
+    border-bottom: 1px solid #eeeeee !important; 
+}
+/* 白底模式下的文字反转色 */
+.dt-category:nth-of-type(even) .dt-cat-header h2 { color: #111111 !important; }
+.dt-category:nth-of-type(even) .dt-cat-header p { color: #666666 !important; }
+.dt-category:nth-of-type(even) .dt-case-item h3 { color: #111111 !important; }
+.dt-category:nth-of-type(even) .dt-case-item p { color: #555555 !important; }
+.dt-category:nth-of-type(even) .en-title { color: #888888 !important; }
+/* 白底模式下，图片阴影变更，突出立体感 */
+.dt-category:nth-of-type(even) .case-single-img { box-shadow: 0 15px 40px rgba(0,0,0,0.08) !important; }
+
+/* 分类标题样式重塑 */
+.dt-cat-header { text-align: center; margin-bottom: 100px; }
+.dt-cat-header .en-title { display: block; font-size: 14px; color: var(--text-muted); margin-bottom: 10px; font-style: italic; letter-spacing: 1px;}
+.dt-cat-header h2 { font-size: 50px; font-weight: 700; letter-spacing: 4px; margin-bottom: 0px; color: #fff; }
+.dt-cat-header p { color: #888; font-size: 15px; line-height: 1.8; max-width: 800px; margin: 15px auto 0; }
+.dt-cat-header::after { content: ''; display: block; width: 60px; height: 3px; background-color: var(--accent-color); margin: 20px auto 0; }
+
+/* 案例列表文本排版 */
+.dt-case-list { max-width: 1400px; margin: 0 auto; }
+.dt-case-item { margin-bottom: 120px !important; padding-bottom: 120px !important; border-bottom: 1px solid #1a1a1a; }
+.dt-case-item:last-child { margin-bottom: 0 !important; padding-bottom: 0 !important; border-bottom: none; }
+.dt-case-item h3 { font-size: 28px !important; font-weight: 600; margin-bottom: 15px; color: #e0e0e0; }
+.dt-case-item p { color: #aaa; font-size: 16px !important; margin-bottom: 40px; line-height: 1.9; text-align: justify; }
+
+/* 案例单张大图样式重塑 (圆角、悬浮、阴影) */
+.case-single-img {
+    width: 100%; height: 500px !important; border-radius: 16px; overflow: hidden; position: relative;
+    background-color: transparent !important; box-shadow: 0 20px 50px rgba(0,0,0,0.4); margin-top: 30px;
+}
+.case-single-img img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: transform 0.5s ease; }
+.case-single-img:hover img { transform: scale(1.02); }
 
 .cta-banner { background: var(--section-bg); padding: 60px 20px 80px; text-align: center; }
 .cta-banner h3 { font-size: 28px; margin-bottom: 10px; }
@@ -531,11 +588,16 @@ footer { background-color: #050505; padding: 60px 40px 20px; border-top: 1px sol
     .ai-case-full-img { height: 260px; }
 
     /* -----------------------------------
-       6. 数字孪生 & 文旅专属
+       6. 数字孪生 & 文旅专属 (手机端适配)
        ----------------------------------- */
-    .case-single-img { height: auto !important; background-color: transparent !important; }
+    .case-single-img { height: auto !important; background-color: transparent !important; border-radius: 8px; }
     .case-single-img img { position: relative !important; width: 100% !important; height: auto !important; object-fit: contain !important; display: block; }
     .beyond-grid { grid-template-columns: 1fr; }
+    
+    /* 标题缩小 */
+    .dt-cat-header h2 { font-size: 36px; }
+    /* 手机端胶囊导航允许折行，防止溢出屏幕 */
+    .cases-tab-nav { flex-wrap: wrap; border-radius: 10px; padding: 10px; }
 
     /* -----------------------------------
        7. 娱乐页面专属 (Entertainment)
